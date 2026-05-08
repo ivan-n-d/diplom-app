@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: mexkek/django-dp
+  tag: "latest" # Это значение будет перезаписываться из пайплайна
+
+postgresql:
+  db: "djangodb"
+  user: "pguser"
+  password: "pgpassword123"
