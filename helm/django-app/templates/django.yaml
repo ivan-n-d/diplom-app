@@ -19,13 +19,13 @@ spec:
           imagePullPolicy: Always
           command: ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
           env:
-            - name: POSTGRES_DB
+            - name: DB_NAME
               value: {{ .Values.postgresql.db }}
-            - name: POSTGRES_USER
+            - name: DB_USER
               value: {{ .Values.postgresql.user }}
-            - name: POSTGRES_PASSWORD
+            - name: DB_PASS
               value: {{ .Values.postgresql.password }}
-            - name: POSTGRES_HOST
+            - name: DB_HOST
               value: {{ .Release.Name }}-postgres-svc
           ports:
             - containerPort: 8000
